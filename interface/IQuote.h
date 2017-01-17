@@ -1,5 +1,6 @@
 #pragma once
 
+
 #ifndef interface
 #define interface struct
 #endif
@@ -9,109 +10,109 @@
 Copyright: FUTU
 Author: ysq
 Date: 2015-03-18
-Description: ĞĞÇéAPIºÍ»Øµ÷½Ó¿Ú¶¨Òå
+Description: è¡Œæƒ…APIå’Œå›è°ƒæ¥å£å®šä¹‰
 **************************************************/  
 
 /**
-*¹ÉÆ±µÄÊĞ³¡ÀàĞÍ 
+*è‚¡ç¥¨çš„å¸‚åœºç±»å‹ 
 */ 
 enum StockMktType 
 {	
-	StockMkt_HK = 1,  //¸Û¹É 
-	StockMkt_US = 2,  //ÃÀ¹É
-	StockMkt_SH = 3,  //»¦¹É
-	StockMkt_SZ = 4,  //Éî¹É
-	StockMkt_Feature_Old = 5,  //¾ÉµÄÆÚ»õ code: 999000, 999001 £¨¾ÉÆÚ»õ·ÖÊ±Êı¾İÔÚÒ»ÌìÁ¬Ğø£©
-	StockMkt_Feature_New = 6,  //ĞÂÆÚ»õ code: 999010, 999011 £¨ĞÂÆÚ»õ·ÖÊ±Êı¾İ»á¿çÌì£¬Óë´«Í³Èí¼ş±£³ÖÒ»ÖÂ£©
+	StockMkt_HK = 1,  //æ¸¯è‚¡ 
+	StockMkt_US = 2,  //ç¾è‚¡
+	StockMkt_SH = 3,  //æ²ªè‚¡
+	StockMkt_SZ = 4,  //æ·±è‚¡
+	StockMkt_Feature_Old = 5,  //æ—§çš„æœŸè´§ code: 999000, 999001 ï¼ˆæ—§æœŸè´§åˆ†æ—¶æ•°æ®åœ¨ä¸€å¤©è¿ç»­ï¼‰
+	StockMkt_Feature_New = 6,  //æ–°æœŸè´§ code: 999010, 999011 ï¼ˆæ–°æœŸè´§åˆ†æ—¶æ•°æ®ä¼šè·¨å¤©ï¼Œä¸ä¼ ç»Ÿè½¯ä»¶ä¿æŒä¸€è‡´ï¼‰
 }; 
 
 enum StockSubErrCode
 {
-	StockSub_Suc = 0,	//¶©ÔÄ³É¹¦
-	StockSub_FailUnknown	= 1,	//Î´ÖªµÄÊ§°Ü
-	StockSub_FailMaxSubNum	= 2,	//µ½´ï×î´ó¶©ÔÄÊı
-	StockSub_FailCodeNoFind = 3,	//´úÂëÃ»ÕÒµ½(Ò²ÓĞ¿ÉÄÜÊÇÊĞ³¡ÀàĞÍ´íÁË)
-	StockSub_FailGuidNoFind = 4,	//²å¼şGUID´«´í
-	StockSub_FailNoImplInf = 5,		//ĞĞÇé½Ó¿ÚÎ´Íê³É
+	StockSub_Suc = 0,	//è®¢é˜…æˆåŠŸ
+	StockSub_FailUnknown	= 1,	//æœªçŸ¥çš„å¤±è´¥
+	StockSub_FailMaxSubNum	= 2,	//åˆ°è¾¾æœ€å¤§è®¢é˜…æ•°
+	StockSub_FailCodeNoFind = 3,	//ä»£ç æ²¡æ‰¾åˆ°(ä¹Ÿæœ‰å¯èƒ½æ˜¯å¸‚åœºç±»å‹é”™äº†)
+	StockSub_FailGuidNoFind = 4,	//æ’ä»¶GUIDä¼ é”™
+	StockSub_FailNoImplInf = 5,		//è¡Œæƒ…æ¥å£æœªå®Œæˆ
 };
 
 /**
-* ¹ÉÆ±»ù´¡±¨¼ÛĞÅÏ¢£º
-* ¼Û¸ñ¾«¶ÈÊÇ3Î»Ğ¡Êı£¬ Èç±¨¼Û8.888´æ´¢Öµ 88888
+* è‚¡ç¥¨åŸºç¡€æŠ¥ä»·ä¿¡æ¯ï¼š
+* ä»·æ ¼ç²¾åº¦æ˜¯3ä½å°æ•°ï¼Œ å¦‚æŠ¥ä»·8.888å­˜å‚¨å€¼ 88888
 */
 typedef struct tagQuotePriceBase
 { 
-	DWORD dwOpen;		//¿ªÅÌ¼Û
-	DWORD dwLastClose;  //×òÊÕ¼Û
-	DWORD dwCur;		//µ±Ç°¼Û
-	DWORD dwHigh;		//×î¸ß¼Û
-	DWORD dwLow;		//×îµÍ¼Û
-	INT64 ddwVolume;	//³É½»Á¿
-	INT64 ddwTrunover;	//³É½»¶î
-	DWORD dwTime;		//±¨¼ÛÊ±¼ä
+	DWORD dwOpen;		//å¼€ç›˜ä»·
+	DWORD dwLastClose;  //æ˜¨æ”¶ä»·
+	DWORD dwCur;		//å½“å‰ä»·
+	DWORD dwHigh;		//æœ€é«˜ä»·
+	DWORD dwLow;		//æœ€ä½ä»·
+	INT64 ddwVolume;	//æˆäº¤é‡
+	INT64 ddwTrunover;	//æˆäº¤é¢
+	DWORD dwTime;		//æŠ¥ä»·æ—¶é—´
 }Quote_PriceBase, *LPQuote_PriceBase;
 
 
 /**
-* ¹ÉÆ±Ê®µµÊı¾İ
-* IFTQuoteData::FillOrderQueue µÄ½Ó¿Ú²ÎÊı  
+* è‚¡ç¥¨åæ¡£æ•°æ®
+* IFTQuoteData::FillOrderQueue çš„æ¥å£å‚æ•°  
 */
 typedef struct tagQuoteOrderQueue
 {
-	DWORD	dwBuyPrice, dwSellPrice;  //Âò¼Û Âô¼Û
-	INT64	ddwBuyVol, ddwSellVol;    //ÂòÁ¿ ÂôÁ¿
-	int		nBuyOrders, nSellOrders;  //µµÎ» 
+	DWORD	dwBuyPrice, dwSellPrice;  //ä¹°ä»· å–ä»·
+	INT64	ddwBuyVol, ddwSellVol;    //ä¹°é‡ å–é‡
+	int		nBuyOrders, nSellOrders;  //æ¡£ä½ 
 }Quote_OrderQueue, *LPQuote_OrderQueue;  
 
 
 /**
-* ĞĞÇé²Ù×÷½Ó¿Ú 
+* è¡Œæƒ…æ“ä½œæ¥å£ 
 */
 interface IFTQuoteOperation 
 {
-	//ĞĞÇé¶¨ÔÄ£¬·µ»Ø´íÎóÂë
+	//è¡Œæƒ…å®šé˜…ï¼Œè¿”å›é”™è¯¯ç 
 	virtual StockSubErrCode Subscribe_PriceBase(const GUID &guidPlugin, LPCWSTR wstrStockCode,  StockMktType eType, bool bSubb) = 0;  
 	virtual StockSubErrCode Subscribe_OrderQueue(const GUID &guidPlugin, LPCWSTR wstrStockCode, StockMktType eType, bool bSubb) = 0; 
 };
 
 /**
-* ĞĞÇéÊı¾İµÄ½Ó¿Ú
+* è¡Œæƒ…æ•°æ®çš„æ¥å£
 */
 interface IFTQuoteData
 { 
 	/**
-	* µ±Ç°ÊÇ·ñÊÇÊµÊ±ĞĞÇé
+	* å½“å‰æ˜¯å¦æ˜¯å®æ—¶è¡Œæƒ…
 	*/
 	virtual bool   IsRealTimeQuotes() = 0; 
 
 	/**
-	* stock µÄhashÖµ, »Øµ÷½Ó¿Ú·½±ã 
+	* stock çš„hashå€¼, å›è°ƒæ¥å£æ–¹ä¾¿ 
 	*/ 
 	virtual INT64  GetStockHashVal(LPCWSTR pstrStockCode, StockMktType eMkt) = 0; 
 
 	/**
-	* Ìî³ä»ù´¡±¨¼Û 
+	* å¡«å……åŸºç¡€æŠ¥ä»· 
 	*/ 
 	virtual bool   FillPriceBase(INT64 ddwStockHash,  Quote_PriceBase* pInfo) = 0; 
 
 	/**
-	* Ìî³äÊ®µµÊı¾İ
+	* å¡«å……åæ¡£æ•°æ®
 	*/ 
 	virtual bool   FillOrderQueue(INT64 ddwStockHash, Quote_OrderQueue* parQuote, int nCount) = 0; 
 }; 
 
 /**
-* ĞĞÇéÊı¾İ»Øµ÷
+* è¡Œæƒ…æ•°æ®å›è°ƒ
 */
 interface IQuoteInfoCallback
 { 
 	/**
-	* »ù´¡±¨¼ÛĞÅÏ¢±ä»¯ 
+	* åŸºç¡€æŠ¥ä»·ä¿¡æ¯å˜åŒ– 
 	*/ 
 	virtual void  OnChanged_PriceBase(INT64  ddwStockHash) = 0; 
 
 	/**
-	* Ê®µµÊı¾İ±ä»¯
+	* åæ¡£æ•°æ®å˜åŒ–
 	*/ 
 	virtual void  OnChanged_OrderQueue(INT64 ddwStockHash) = 0; 
 };
